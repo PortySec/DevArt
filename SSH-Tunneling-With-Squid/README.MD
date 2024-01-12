@@ -14,7 +14,7 @@ Follow the steps outlined in each section. Code snippets and diagrams are provid
 
 ## Diagrams
 Include your network diagrams here. If they are image files, you can add them like so:
-![SSH Tunneling Diagram](/path/to/your/diagram.png)
+![SSH Tunneling Diagram](./SSH%20Tunneling%20and%20Squid%20Proxy%20Network%20Setup.png)
 
 ## Code Examples
 ```bash
