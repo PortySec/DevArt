@@ -1,0 +1,25 @@
+title SSH Tunneling and Squid Proxy Network Setup
+
+participant "Server (No Direct Internet Access)" as Server #ffcccb
+participant "Host System (Internet Access)" as HostSystem #add8e6
+participant "Squid Proxy (Port 3128)" as SquidProxy #90ee90
+participant "Internet" as Internet #ffffe0
+
+HostSystem->Server: Establish SSH Tunnel\nCommand: ssh -R 3128:localhost:3128 server_user@server-hostname
+note right of HostSystem: Host System initiates SSH connection\nto Server for remote port forwarding
+
+Server->Server: Bind Port 3128 to Squid Proxy Port 3128
+note right of Server: Server binds its port 3128\nto Squid Proxy's port 3128
+
+Server-#33cc33>SquidProxy: Connects to Squid Proxy\non Port 3128
+note right of Server: Server routes its\ninternet requests to Squid Proxy 
+
+SquidProxy-#33cc33>Internet: Fetches Internet Data\n(HTTPS/HTTP Requests)
+note right of SquidProxy: Squid Proxy accesses Internet\nto retrieve data for the Server 
+
+Internet-#33cc33>SquidProxy: Returns Requested Data\n(Responses with Data)
+SquidProxy->Server: Sends Data to Server\nvia SSH Tunnel
+note over Server,Internet: Server securely accesses Internet\nthrough SSH Tunnel and Squid Proxy
+
+Server-#redxInternet: Attempt Direct Internet Access\n(Fails due to No Direct Access)
+note right of Server: Direct Internet Access Attempt\nResults in Failure
