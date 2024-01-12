@@ -19,4 +19,4 @@ Include your network diagrams here. If they are image files, you can add them li
 ## Code Examples
 ```bash
 # Example of SSH command for tunneling
-ssh -R 3125:localhost:3128 user@host_system
+ssh -R 3128:localhost:3128 user@host_system
