@@ -1,7 +1,7 @@
 # SSH Tunneling and Squid Proxy Tutorial
 
 ## Overview
-This tutorial provides a comprehensive guide on setting up SSH tunneling with a Squid proxy to enable internet access for servers without direct internet connectivity.
+This tutorial provides a comprehensive guide on setting up SSH tunneling with a Squid proxy to enable internet access for servers that are isolated from the internet.
 
 ## Topics Covered
 - Setting up a Squid proxy
@@ -41,7 +41,7 @@ ssh -R 3128:localhost:3128 user@host_system
 ### Establishing an SSH Tunnel
 
 4. **SSH Tunnel Setup**:
-   - On the server without internet access, establish an SSH tunnel to the host system with the following command:
+   - On the server that is isolated from the internet, establish an SSH tunnel to the host system with the following command:
      ```bash
      ssh -R 3128:localhost:3128 user@host_system
      ```
@@ -52,8 +52,8 @@ ssh -R 3128:localhost:3128 user@host_system
 
 ### Configuring the Server and Host System
 
-6. **Configure the Internetless Server**:
-   - SSH into the internetless server and open a terminal.
+6. **Configure the Isolated Server**:
+   - SSH into the isolated server and open a terminal.
 
 7. **Set HTTP Proxy**:
    - To configure the server to use the Squid proxy for HTTP connections, execute the following command:
@@ -65,7 +65,6 @@ ssh -R 3128:localhost:3128 user@host_system
    - If you want to route HTTPS traffic through the Squid proxy, execute the following command:
      ```bash
      export https_proxy=http://localhost:3128
-    
      ```
 
 9. **Verify Proxy Configuration**:
@@ -87,9 +86,8 @@ ssh -R 3128:localhost:3128 user@host_system
 ### Ensuring Secure and Efficient Internet Access
 
 12. **Access the Internet**:
-    - Your internetless server should now have secure internet access through the Squid proxy via the established SSH tunnel.
+    - Your isolated server should now have secure internet access through the Squid proxy via the established SSH tunnel.
 
 13. **Monitoring and Troubleshooting**:
     - Regularly monitor the Squid proxy logs and SSH tunnel for any issues. Troubleshoot and adjust configurations as necessary.
-
-By following these steps, you can successfully set up SSH tunneling with a Squid proxy, allowing your server without direct internet connectivity to access the internet securely 
+```
