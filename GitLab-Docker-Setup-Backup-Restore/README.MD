@@ -4,7 +4,7 @@ This repository provides a comprehensive guide on how to backup and restore a Gi
 
 ## Prerequisites
 
-Before you begin, ensure you have a running GitLab container. If you haven't set this up yet, please refer to the [GitLab Docker Setup Guide](link-to-another-repo-for-setup).
+Before you begin, ensure you have a running GitLab container. If you haven't set this up yet, please refer to the [GitLab Docker Setup Guide](https://github.com/PortySec/DockerDream/tree/portydocker/gitlab-docker).
 
 ### Important Considerations
 
